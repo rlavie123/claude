@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "MosquitoDetector",
+    "slug": "mosquito-fly-detector",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0A"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.mosquitodetector.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Camera is required to visually detect mosquitoes and flies in your environment.",
+        "NSMicrophoneUsageDescription": "Microphone is used to detect the characteristic wing-beat frequency of mosquitoes (~400-600 Hz) and flies (~160-220 Hz)."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0A"
+      },
+      "package": "com.mosquitodetector.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow MosquitoDetector to access your camera to detect insects."
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow MosquitoDetector to access your microphone to detect insect wing-beat frequencies."
+        }
+      ]
+    ]
+  }
+}
